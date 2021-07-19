@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BreakingNews</string>
+    <string name="flood_tragedy_heading">Deadly floods inundated parts of Europe,
+        but the Netherlands avoided fatalities. </string>
+    <string name="flood_tragedy_text">As communities devastated by the catastrophic flooding in parts
+        of western Europe start picking up the pieces, they are wondering how it all went so wrong,
+        so fast. After all, Europe has a world-leading warning system that issued regular alerts for days before
+        floods engulfed entire villages.
+
+But at least 195 people still died in Germany and Belgium, in floods that came quickly and forcefully.
+        The Copernicus Emergency Management Service said it sent more than 25 warnings for specific regions
+        of the Rhine and Maas river basins in the days leading up to the flooding, through its European Flood Awareness
+        System (EFAS), well before heavy rains triggered the flash flooding.
+But few of these early warnings appear to have been passed on to residents early -- and clearly -- enough,
+        catching them completely off guard. Now questions are being raised over whether the chain of communication
+        from the central European level to regions is working.</string>
+
+</resources>
