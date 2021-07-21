@@ -3,18 +3,24 @@ package com.example.breakingnews
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_news.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NewsCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         var news = getNews()
-        rvNews.adapter = NewsAdapter(this,news)
+        rvNews.adapter = NewsAdapter(this,news, this,counter)
         rvNews.layoutManager = LinearLayoutManager (this)
     }
+
 
     fun getNews(): ArrayList<News>{
         var news = ArrayList<News>()
@@ -35,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                         "But few of these early warnings appear to have been passed on to residents early -- and clearly -- enough,\n" +
                         "        catching them completely off guard. Now questions are being raised over whether the chain of communication\n" +
                         "        from the central European level to regions is working."
+
         ))
         news.add(
             News(
@@ -46,6 +53,7 @@ class MainActivity : AppCompatActivity() {
                         "Did Leonardo da Vinci have ADHD? Academics say he did\n" +
                         "The research is part of the Leonardo Da Vinci DNA Project, which aims to confirm remains thought to be his and to \"better understand his" +
                         " extraordinary talents and visual acuity through genetic associations.\""
+
             ))
         news.add(
             News(
@@ -58,6 +66,7 @@ class MainActivity : AppCompatActivity() {
                         "even bigger point plunges since the start of 2020 due to concerns about the Covid-19 pandemic.\n" +
                         "The Dow plummeted more than 1,000 points six times last year, with five of those market meltdowns taking place in March at the start of the " +
                         "pandemic in America. The Dow suffered its biggest point slide ever on March 16, 2020, dropping nearly 3,000 points — a 13% freefall."
+
             ))
         news.add(
             News(
@@ -68,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                         "Dressed in traditional headdress, faces decorated with paint, this indigenous community prepares its bows and spears to defend their land " +
                         "against garimpeiros -- illegal gold miners looking for glimmers of gold in this vast and rich territory.\n" +
                         "Fernando, one of the Yanomami leaders, told CNN on a recent reporting trip to the riverside Palimiu settlement what the community has been enduring for months now."
+
             ))
         news.add(
             News(
@@ -79,6 +89,7 @@ class MainActivity : AppCompatActivity() {
                         "In June, Morton was working in his home office in Cranbrook, British Columbia, while Darla, a 3-year-old Chinese shar-pei, lounged on the deck, soaking up the sun.\n" +
                         "As he worked, Morton heard a loud noise followed by the sound of his gate being opened.\n" +
                         "\"I look out the window and I don\'t see Darla anymore. I ran down the stairs and out to the deck, Darla was gone, and I saw a blue Ford truck back out and speed off,\" Morton, 35, told CNN"
+
             ))
         news.add(
             News(
@@ -96,6 +107,7 @@ class MainActivity : AppCompatActivity() {
                         "But few of these early warnings appear to have been passed on to residents early -- and clearly -- enough,\n" +
                         "        catching them completely off guard. Now questions are being raised over whether the chain of communication\n" +
                         "        from the central European level to regions is working."
+
             ))
         news.add(
             News(
@@ -107,6 +119,7 @@ class MainActivity : AppCompatActivity() {
                         "Did Leonardo da Vinci have ADHD? Academics say he did\n" +
                         "The research is part of the Leonardo Da Vinci DNA Project, which aims to confirm remains thought to be his and to \"better understand his" +
                         " extraordinary talents and visual acuity through genetic associations.\""
+
             ))
         news.add(
             News(
@@ -119,6 +132,7 @@ class MainActivity : AppCompatActivity() {
                         "even bigger point plunges since the start of 2020 due to concerns about the Covid-19 pandemic.\n" +
                         "The Dow plummeted more than 1,000 points six times last year, with five of those market meltdowns taking place in March at the start of the " +
                         "pandemic in America. The Dow suffered its biggest point slide ever on March 16, 2020, dropping nearly 3,000 points — a 13% freefall."
+
             ))
         news.add(
             News(
@@ -129,6 +143,7 @@ class MainActivity : AppCompatActivity() {
                         "Dressed in traditional headdress, faces decorated with paint, this indigenous community prepares its bows and spears to defend their land " +
                         "against garimpeiros -- illegal gold miners looking for glimmers of gold in this vast and rich territory.\n" +
                         "Fernando, one of the Yanomami leaders, told CNN on a recent reporting trip to the riverside Palimiu settlement what the community has been enduring for months now."
+
             ))
         news.add(
             News(
@@ -140,6 +155,7 @@ class MainActivity : AppCompatActivity() {
                         "In June, Morton was working in his home office in Cranbrook, British Columbia, while Darla, a 3-year-old Chinese shar-pei, lounged on the deck, soaking up the sun.\n" +
                         "As he worked, Morton heard a loud noise followed by the sound of his gate being opened.\n" +
                         "\"I look out the window and I don\'t see Darla anymore. I ran down the stairs and out to the deck, Darla was gone, and I saw a blue Ford truck back out and speed off,\" Morton, 35, told CNN"
+
             ))
         news.add(
             News(
@@ -157,6 +173,7 @@ class MainActivity : AppCompatActivity() {
                         "But few of these early warnings appear to have been passed on to residents early -- and clearly -- enough,\n" +
                         "        catching them completely off guard. Now questions are being raised over whether the chain of communication\n" +
                         "        from the central European level to regions is working."
+
             ))
         news.add(
             News(
@@ -168,6 +185,7 @@ class MainActivity : AppCompatActivity() {
                         "Did Leonardo da Vinci have ADHD? Academics say he did\n" +
                         "The research is part of the Leonardo Da Vinci DNA Project, which aims to confirm remains thought to be his and to \"better understand his" +
                         " extraordinary talents and visual acuity through genetic associations.\""
+
             ))
         news.add(
             News(
@@ -180,6 +198,7 @@ class MainActivity : AppCompatActivity() {
                         "even bigger point plunges since the start of 2020 due to concerns about the Covid-19 pandemic.\n" +
                         "The Dow plummeted more than 1,000 points six times last year, with five of those market meltdowns taking place in March at the start of the " +
                         "pandemic in America. The Dow suffered its biggest point slide ever on March 16, 2020, dropping nearly 3,000 points — a 13% freefall."
+
             ))
         news.add(
             News(
@@ -190,6 +209,7 @@ class MainActivity : AppCompatActivity() {
                         "Dressed in traditional headdress, faces decorated with paint, this indigenous community prepares its bows and spears to defend their land " +
                         "against garimpeiros -- illegal gold miners looking for glimmers of gold in this vast and rich territory.\n" +
                         "Fernando, one of the Yanomami leaders, told CNN on a recent reporting trip to the riverside Palimiu settlement what the community has been enduring for months now."
+
             ))
         news.add(
             News(
@@ -201,10 +221,22 @@ class MainActivity : AppCompatActivity() {
                         "In June, Morton was working in his home office in Cranbrook, British Columbia, while Darla, a 3-year-old Chinese shar-pei, lounged on the deck, soaking up the sun.\n" +
                         "As he worked, Morton heard a loud noise followed by the sound of his gate being opened.\n" +
                         "\"I look out the window and I don\'t see Darla anymore. I ran down the stairs and out to the deck, Darla was gone, and I saw a blue Ford truck back out and speed off,\" Morton, 35, told CNN"
+
             ))
 
 
 
         return news
     }
-}
+
+
+
+         override fun onItemSelected(index :Int)  {
+             Log.d("MyLog", "ok " + index)
+
+         }
+
+
+    }
+
+
