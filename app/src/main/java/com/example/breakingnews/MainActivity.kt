@@ -17,7 +17,9 @@ class MainActivity : AppCompatActivity(), NewsCallback {
 
 
         var news = getNews()
-        rvNews.adapter = NewsAdapter(this,news, this,counter)
+
+
+        rvNews.adapter = NewsAdapter(this,news, this)
         rvNews.layoutManager = LinearLayoutManager (this)
     }
 
@@ -30,17 +32,22 @@ class MainActivity : AppCompatActivity(), NewsCallback {
             BitmapFactory.decodeResource(resources, R.drawable.floodtragedy),
             "Deadly floods inundated parts of Europe but the Netherlands avoided fatalities. Here\'s why",
                 "As communities devastated by the catastrophic flooding in parts\n" +
-                        "        of western Europe start picking up the pieces, they are wondering how it all went so wrong,\n" +
-                        "        so fast. After all, Europe has a world-leading warning system that issued regular alerts for days before\n" +
-                        "        floods engulfed entire villages.\n" +
-                        "\n" +
-                        "But at least 195 people still died in Germany and Belgium, in floods that came quickly and forcefully.\n" +
-                        "        The Copernicus Emergency Management Service said it sent more than 25 warnings for specific regions\n" +
-                        "        of the Rhine and Maas river basins in the days leading up to the flooding, through its European Flood Awareness\n" +
-                        "        System (EFAS), well before heavy rains triggered the flash flooding.\n" +
+                        "of western Europe start picking up the pieces, they are wondering how it all went so wrong,\n" +
+                        "so fast. After all, Europe has a world-leading warning system that issued regular alerts for days before\n" +
+                        "floods engulfed entire villages.\n" + "But at least 195 people still died in Germany and Belgium, in floods that came quickly and forcefully.\n" +
+                        "The Copernicus Emergency Management Service said it sent more than 25 warnings for specific regions\n" +
+                        "of the Rhine and Maas river basins in the days leading up to the flooding, through its European Flood Awareness\n" +
+                        "System (EFAS), well before heavy rains triggered the flash flooding.\n" +
                         "But few of these early warnings appear to have been passed on to residents early -- and clearly -- enough,\n" +
-                        "        catching them completely off guard. Now questions are being raised over whether the chain of communication\n" +
-                        "        from the central European level to regions is working."
+                        "catching them completely off guard.",
+                0,
+                    Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                            "News is always boring",
+                    0),
+                    Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
+
 
         ))
         news.add(
@@ -52,7 +59,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "The findings, published in the journal Human Evolution this month, comes from a new genealogical tree going through 21 generations and four branches.\n" +
                         "Did Leonardo da Vinci have ADHD? Academics say he did\n" +
                         "The research is part of the Leonardo Da Vinci DNA Project, which aims to confirm remains thought to be his and to \"better understand his" +
-                        " extraordinary talents and visual acuity through genetic associations.\""
+                        " extraordinary talents and visual acuity through genetic associations.\"",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -65,7 +79,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "This is shaping up to be the worst day for the Dow since a 943-point drop in late October. But the blue chip market barometer has had several " +
                         "even bigger point plunges since the start of 2020 due to concerns about the Covid-19 pandemic.\n" +
                         "The Dow plummeted more than 1,000 points six times last year, with five of those market meltdowns taking place in March at the start of the " +
-                        "pandemic in America. The Dow suffered its biggest point slide ever on March 16, 2020, dropping nearly 3,000 points — a 13% freefall."
+                        "pandemic in America. The Dow suffered its biggest point slide ever on March 16, 2020, dropping nearly 3,000 points — a 13% freefall.",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -76,7 +97,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "\n" +
                         "Dressed in traditional headdress, faces decorated with paint, this indigenous community prepares its bows and spears to defend their land " +
                         "against garimpeiros -- illegal gold miners looking for glimmers of gold in this vast and rich territory.\n" +
-                        "Fernando, one of the Yanomami leaders, told CNN on a recent reporting trip to the riverside Palimiu settlement what the community has been enduring for months now."
+                        "Fernando, one of the Yanomami leaders, told CNN on a recent reporting trip to the riverside Palimiu settlement what the community has been enduring for months now.",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -88,7 +116,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "So, when he found the person who stole his beloved dog, Darla, and discovered she was addicted to fentanyl, he knew what to do: pay for her rehab and help save her life.\n" +
                         "In June, Morton was working in his home office in Cranbrook, British Columbia, while Darla, a 3-year-old Chinese shar-pei, lounged on the deck, soaking up the sun.\n" +
                         "As he worked, Morton heard a loud noise followed by the sound of his gate being opened.\n" +
-                        "\"I look out the window and I don\'t see Darla anymore. I ran down the stairs and out to the deck, Darla was gone, and I saw a blue Ford truck back out and speed off,\" Morton, 35, told CNN"
+                        "\"I look out the window and I don\'t see Darla anymore. I ran down the stairs and out to the deck, Darla was gone, and I saw a blue Ford truck back out and speed off,\" Morton, 35, told CNN",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -96,17 +131,22 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                 BitmapFactory.decodeResource(resources, R.drawable.floodtragedy),
                 "Deadly floods inundated parts of Europe but the Netherlands avoided fatalities. Here\'s why",
                 "As communities devastated by the catastrophic flooding in parts\n" +
-                        "        of western Europe start picking up the pieces, they are wondering how it all went so wrong,\n" +
-                        "        so fast. After all, Europe has a world-leading warning system that issued regular alerts for days before\n" +
-                        "        floods engulfed entire villages.\n" +
-                        "\n" +
+                        "of western Europe start picking up the pieces, they are wondering how it all went so wrong,\n" +
+                        "so fast. After all, Europe has a world-leading warning system that issued regular alerts for days before\n" +
+                        "floods engulfed entire villages.\n" +
                         "But at least 195 people still died in Germany and Belgium, in floods that came quickly and forcefully.\n" +
-                        "        The Copernicus Emergency Management Service said it sent more than 25 warnings for specific regions\n" +
-                        "        of the Rhine and Maas river basins in the days leading up to the flooding, through its European Flood Awareness\n" +
-                        "        System (EFAS), well before heavy rains triggered the flash flooding.\n" +
+                        "The Copernicus Emergency Management Service said it sent more than 25 warnings for specific regions\n" +
+                        "of the Rhine and Maas river basins in the days leading up to the flooding, through its European Flood Awareness\n" +
+                        "System (EFAS), well before heavy rains triggered the flash flooding.\n" +
                         "But few of these early warnings appear to have been passed on to residents early -- and clearly -- enough,\n" +
-                        "        catching them completely off guard. Now questions are being raised over whether the chain of communication\n" +
-                        "        from the central European level to regions is working."
+                        "catching them completely off guard.",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -118,7 +158,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "The findings, published in the journal Human Evolution this month, comes from a new genealogical tree going through 21 generations and four branches.\n" +
                         "Did Leonardo da Vinci have ADHD? Academics say he did\n" +
                         "The research is part of the Leonardo Da Vinci DNA Project, which aims to confirm remains thought to be his and to \"better understand his" +
-                        " extraordinary talents and visual acuity through genetic associations.\""
+                        " extraordinary talents and visual acuity through genetic associations.\"",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -131,7 +178,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "This is shaping up to be the worst day for the Dow since a 943-point drop in late October. But the blue chip market barometer has had several " +
                         "even bigger point plunges since the start of 2020 due to concerns about the Covid-19 pandemic.\n" +
                         "The Dow plummeted more than 1,000 points six times last year, with five of those market meltdowns taking place in March at the start of the " +
-                        "pandemic in America. The Dow suffered its biggest point slide ever on March 16, 2020, dropping nearly 3,000 points — a 13% freefall."
+                        "pandemic in America. The Dow suffered its biggest point slide ever on March 16, 2020, dropping nearly 3,000 points — a 13% freefall.",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -142,7 +196,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "\n" +
                         "Dressed in traditional headdress, faces decorated with paint, this indigenous community prepares its bows and spears to defend their land " +
                         "against garimpeiros -- illegal gold miners looking for glimmers of gold in this vast and rich territory.\n" +
-                        "Fernando, one of the Yanomami leaders, told CNN on a recent reporting trip to the riverside Palimiu settlement what the community has been enduring for months now."
+                        "Fernando, one of the Yanomami leaders, told CNN on a recent reporting trip to the riverside Palimiu settlement what the community has been enduring for months now.",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -154,7 +215,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "So, when he found the person who stole his beloved dog, Darla, and discovered she was addicted to fentanyl, he knew what to do: pay for her rehab and help save her life.\n" +
                         "In June, Morton was working in his home office in Cranbrook, British Columbia, while Darla, a 3-year-old Chinese shar-pei, lounged on the deck, soaking up the sun.\n" +
                         "As he worked, Morton heard a loud noise followed by the sound of his gate being opened.\n" +
-                        "\"I look out the window and I don\'t see Darla anymore. I ran down the stairs and out to the deck, Darla was gone, and I saw a blue Ford truck back out and speed off,\" Morton, 35, told CNN"
+                        "\"I look out the window and I don\'t see Darla anymore. I ran down the stairs and out to the deck, Darla was gone, and I saw a blue Ford truck back out and speed off,\" Morton, 35, told CNN",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -162,17 +230,22 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                 BitmapFactory.decodeResource(resources, R.drawable.floodtragedy),
                 "Deadly floods inundated parts of Europe but the Netherlands avoided fatalities. Here\'s why",
                 "As communities devastated by the catastrophic flooding in parts\n" +
-                        "        of western Europe start picking up the pieces, they are wondering how it all went so wrong,\n" +
-                        "        so fast. After all, Europe has a world-leading warning system that issued regular alerts for days before\n" +
-                        "        floods engulfed entire villages.\n" +
-                        "\n" +
+                        "of western Europe start picking up the pieces, they are wondering how it all went so wrong,\n" +
+                        "so fast. After all, Europe has a world-leading warning system that issued regular alerts for days before\n" +
+                        "floods engulfed entire villages.\n" +
                         "But at least 195 people still died in Germany and Belgium, in floods that came quickly and forcefully.\n" +
-                        "        The Copernicus Emergency Management Service said it sent more than 25 warnings for specific regions\n" +
-                        "        of the Rhine and Maas river basins in the days leading up to the flooding, through its European Flood Awareness\n" +
-                        "        System (EFAS), well before heavy rains triggered the flash flooding.\n" +
+                        "The Copernicus Emergency Management Service said it sent more than 25 warnings for specific regions\n" +
+                        "of the Rhine and Maas river basins in the days leading up to the flooding, through its European Flood Awareness\n" +
+                        "System (EFAS), well before heavy rains triggered the flash flooding.\n" +
                         "But few of these early warnings appear to have been passed on to residents early -- and clearly -- enough,\n" +
-                        "        catching them completely off guard. Now questions are being raised over whether the chain of communication\n" +
-                        "        from the central European level to regions is working."
+                        "catching them completely off guard.",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -184,7 +257,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "The findings, published in the journal Human Evolution this month, comes from a new genealogical tree going through 21 generations and four branches.\n" +
                         "Did Leonardo da Vinci have ADHD? Academics say he did\n" +
                         "The research is part of the Leonardo Da Vinci DNA Project, which aims to confirm remains thought to be his and to \"better understand his" +
-                        " extraordinary talents and visual acuity through genetic associations.\""
+                        " extraordinary talents and visual acuity through genetic associations.\"",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -197,7 +277,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "This is shaping up to be the worst day for the Dow since a 943-point drop in late October. But the blue chip market barometer has had several " +
                         "even bigger point plunges since the start of 2020 due to concerns about the Covid-19 pandemic.\n" +
                         "The Dow plummeted more than 1,000 points six times last year, with five of those market meltdowns taking place in March at the start of the " +
-                        "pandemic in America. The Dow suffered its biggest point slide ever on March 16, 2020, dropping nearly 3,000 points — a 13% freefall."
+                        "pandemic in America. The Dow suffered its biggest point slide ever on March 16, 2020, dropping nearly 3,000 points — a 13% freefall.",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -208,7 +295,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "\n" +
                         "Dressed in traditional headdress, faces decorated with paint, this indigenous community prepares its bows and spears to defend their land " +
                         "against garimpeiros -- illegal gold miners looking for glimmers of gold in this vast and rich territory.\n" +
-                        "Fernando, one of the Yanomami leaders, told CNN on a recent reporting trip to the riverside Palimiu settlement what the community has been enduring for months now."
+                        "Fernando, one of the Yanomami leaders, told CNN on a recent reporting trip to the riverside Palimiu settlement what the community has been enduring for months now.",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
         news.add(
@@ -220,7 +314,14 @@ class MainActivity : AppCompatActivity(), NewsCallback {
                         "So, when he found the person who stole his beloved dog, Darla, and discovered she was addicted to fentanyl, he knew what to do: pay for her rehab and help save her life.\n" +
                         "In June, Morton was working in his home office in Cranbrook, British Columbia, while Darla, a 3-year-old Chinese shar-pei, lounged on the deck, soaking up the sun.\n" +
                         "As he worked, Morton heard a loud noise followed by the sound of his gate being opened.\n" +
-                        "\"I look out the window and I don\'t see Darla anymore. I ran down the stairs and out to the deck, Darla was gone, and I saw a blue Ford truck back out and speed off,\" Morton, 35, told CNN"
+                        "\"I look out the window and I don\'t see Darla anymore. I ran down the stairs and out to the deck, Darla was gone, and I saw a blue Ford truck back out and speed off,\" Morton, 35, told CNN",
+                0,
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.cat_with_spectacles),
+                    "News is always boring",
+                    0),
+                Comment (BitmapFactory.decodeResource(resources, R.drawable.dog),
+                    "Something happens",
+                    0)
 
             ))
 
@@ -228,6 +329,7 @@ class MainActivity : AppCompatActivity(), NewsCallback {
 
         return news
     }
+
 
 
 
